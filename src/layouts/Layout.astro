@@ -1,22 +1,56 @@
+---
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={base + "/favicon.png"} />
+    <meta name="generator" content={Astro.generator} />
+    <title>Tampermonkey</title>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <Footer></Footer>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  * {
+    box-sizing: border-box;
+	font-family: "Acumin Pro", sans-serif;
+  }
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #252525;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  :global(h1) {
+    font-size: 2rem;
+    text-align: center;
+  }
+  main {
+    width: 100%;
+    max-width: 80ch;
+    margin-inline: auto;
+  }
+  :global(p){
+	line-height: 1.5rem;
+  }
+  
+
 </style>

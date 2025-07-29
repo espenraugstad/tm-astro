@@ -1,0 +1,21 @@
+---
+layout: "../../layouts/ScriptLayout.astro"
+title: "Page Numbering Smartdesigner"
+description: "Automatically add page numbers to module pages made with Smartdesigner header."
+version: "2025-01-20"
+tags: ["uia", "canvas", "smartdesigner"]
+---
+import DownloadButton from "../../components/DownloadButton.astro";
+import Figure from "../../components/Figure.astro";
+
+# Page Numbering Smartdesigner
+
+<DownloadButton url={import.meta.env.BASE_URL + "/scripts/page_numbering_in_canvas.zip"} />
+
+<hr />
+
+This script adds buttons that allow you to insert page numbers into specific headers created with Smartdesigner. The buttons are labeled in Norwegian: "Legg til sidetall" to add page numbers, and "Fjern sidetall" to remove them.
+
+<Figure src={import.meta.env.BASE_URL + "/images/add_page_buttons.png"} alt="Screenshot of the buttons that let you add and remove page numbers." cap="Screenshot of the buttons that let you add and remove page numbers." />
+
+When you run the "add page numbers" function with existing page numbers, it will update the current values to reflect any changes. The page numbers will be formatted as “Side x av y,” where x is the current page and y is the total number of pages (entries) in the module. Only pages (with the right headers) will display page numbers.

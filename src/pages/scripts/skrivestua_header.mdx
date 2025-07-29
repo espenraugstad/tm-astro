@@ -1,0 +1,31 @@
+---
+layout: "../../layouts/ScriptLayout.astro"
+title: "Skrivestua Header Navigation"
+description: "Functionality that allows easy update of header across pages. Made specifically for Skrivestua."
+version: "2025-05-05"
+tags: ["uia", "canvas", "smartdesigner", "skrivestua"]
+---
+import DownloadButton from "../../components/DownloadButton.astro";
+import Figure from "../../components/Figure.astro";
+
+# Update Header Navigation
+
+<DownloadButton url={import.meta.env.BASE_URL + "/scripts/tm_skrivestua_header_navigation.zip"} />
+
+<hr/>
+
+## How to use
+
+Once installed, go to any page in Canvas that contains a navigation header. Edit the header using Smartdesigner. When the header is done, exit Smartdesigner, or go to the page without being in editing mode. This may look something like shown in the figure below.
+
+<Figure src={import.meta.env.BASE_URL + "/images/skrivestua_start.png"} alt="Screenshot of a page with a header." cap='A screenshot of a page outside editing mode, with the button "Oppdater header" on the top right.' />
+
+Click the button "Oppdater header" to start the process. This will open a new window as shown below, where you can select which pages to update.
+
+<Figure src={import.meta.env.BASE_URL + "/images/skrivestua_modal.png"} alt="Screenshot of a modal window where you can enter what pages to update." cap='A modal window opens where you can select which pages to update.' />
+
+As shown above, if you just enter the number 1, it will update all pages that start with the number 1 in the title. That means all pages with titles such as *1 Introduksjon*, *1 - 6: Om karakterer*, *123 ABC*, or *1.3 Videoer om tidsplanlegging*. If you want to be more specific, you can for example enter "1.2", and only pages starting with 1.2 in the title will be updated.
+
+## Note on use
+
+This will only update headers (or add if they don't exist) on pages that have been at least opened once with Smartdesigner. If you are starting a new page, make sure you open it in editing mode with Smartdesigner at least once. It shouldn't be necessary to add any content.

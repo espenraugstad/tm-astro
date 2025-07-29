@@ -1,0 +1,23 @@
+---
+layout: "../../layouts/ScriptLayout.astro"
+title: "Canvas components"
+description: "Add components to your rich text editor."
+version: "2025-03-16"
+tags: ["uia", "demo", "canvas"]
+
+---
+import DownloadButton from "../../components/DownloadButton.astro";
+import Figure from "../../components/Figure.astro";
+
+# Canvas components
+<DownloadButton url={import.meta.env.BASE_URL + "/scripts/tm_canvas_components.zip"}></DownloadButton>
+
+<hr/>
+
+This script adds an extra button to the toolbar in the Rich Text Editor in Canvas when editing pages. The icon is a jigsaw puzzle piece (se red box in image below).
+
+<Figure src={import.meta.env.BASE_URL + "/images/jigsaw_toolbar.png"} alt="Screenshot of part of the toolbar in Canvas showing the icon to insert components." cap="Icon on the toolbar to access Canvas components." />
+
+When you click the icon, a new dialog box will appear, displaying various components you can insert. Find the component you want and click the corresponding button to insert it into the editor at the cursor's position. The image below shows an example of what the dialog box might look like.
+
+<Figure src={import.meta.env.BASE_URL + "/images/component_box.png"} alt="Screenshot the dialog box used to insert components." cap="Dialog box to insert Canvas components."/>

@@ -1,0 +1,61 @@
+---
+import Home from "../components/Home.astro";
+import Layout from "../layouts/Layout.astro";
+import Figure from "../components/Figure.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout>
+  <Home />
+  <h1>Import Tampermonkey scripts</h1>
+  <h2>Step 1</h2>
+  <p>
+    In order to import a script, start by opening the Tampermonkey extension.
+    Click the extension icon and select “Utilities” (no: “Hovedmeny”) next to
+    the cogwheel icon. This will take you to a new page in your browser that
+    shows an overview of your existing scripts (if any). From this page, click
+    the “Utilities” tab (no: “Verktøy”) as shown in the image below.
+  </p>
+  <Figure
+    src={base + "/images/tm_utilities.png"}
+    alt="Screenshot of Tampermonkey extension start page."
+    cap="Under the utilities tab is where you can import scripts."
+  />
+
+  <h2>Step 2</h2>
+  <p>
+    In the new window there is an option to “Import from file”. Click the button
+    here and select the zip file containing the script you have downloaded.
+  </p>
+  <Figure
+    src={base + "/images/tm_import_file.png"}
+    alt="Screenshot of utilities page in Tampermonkey."
+    cap="Import from file in Tampermonkey."
+  />
+
+  <h2>Step 3</h2>
+  <p>
+    Once the zip file is selected, a new window with some information about the
+    script you are trying to import will be displayed. Click the “Import” button
+    here to finish importing the script.
+  </p>
+  <Figure
+    src={base + "/images/tm_import_selected.png"}
+    alt="Screenshot of a script ready for import in Tampermonkey."
+    cap="Import button will import the selected script."
+  />
+
+  <h2>Step 4</h2>
+  <p>
+    You will now be taken back to the overview of your installed script. The one
+    you just imported will be shown here. Make sure the switch to enable the
+    script is on (the button is in the rightmost position) as shown in the image
+    below.
+  </p>
+  <Figure
+    src={base + "/images/tm_imported.png"}
+    alt="Screenshot from Tampermonkey showing installed and active scripts."
+    cap="The script is now imported and active."
+  />
+</Layout>
