@@ -1,0 +1,30 @@
+---
+layout: "../../layouts/ScriptLayout.astro"
+title: "Find Smartdesigner Color Palette"
+description: "Automatically audit a Canvas course to locate the use of different color palettes."
+version: "2025-10-07"
+tags: ["uia", "smartdesigner", "canvas"]
+
+---
+import DownloadButton from "../../components/DownloadButton.astro";
+import Figure from "../../components/Figure.astro";
+
+# Find Smartdesigner Color Palette
+<DownloadButton url={import.meta.env.BASE_URL + "/scripts/tm_smartdesigner_color_palette.zip"}></DownloadButton>
+
+<hr/>
+
+Add a button to the top right of a course home page (see screenshot below). The text "Smartdesigner Fargepaletter" means "Smartdesigner Color Palettes".
+
+<Figure src={import.meta.env.BASE_URL + "/images/sd_color_palette_button.png"} alt="Screenshot of the button that is used to find color palettes." cap="Button that is used to find color palettes." />
+
+Clicking the button will open a modal window where you can start the audit. It will show the progression of the audit with the following symbols:
+
+* &#128270; Currently searching in this category.
+* &#9989; Smartdesigner has been found in at least one item in this category.
+* &#10060; Smartdesigner has not been found in any items in this category.
+* &#128683; An error has occured that most likely indicates that you do not have access to search items in this category.
+
+When the audit is finished, it is possible to download the results as a CSV file. The image below shows a screenshot of a course that has been auditet.
+
+<Figure src={import.meta.env.BASE_URL + "/images/color_palette_audit_results.png"} alt="Screenshot of results from an audit." cap="Results of an audit of a course. Smartdesigner has been used on at least one page and the on the syllabus page (no: emneoversikt)." />
