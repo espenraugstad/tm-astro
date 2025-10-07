@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import ScriptCard from "../../components/ScriptCard.astro";
+import ScriptList from "../../components/ScriptList.astro";
 import Home from "../../components/Home.astro";
 
 export async function getStaticPaths() {
@@ -30,28 +30,7 @@ const { scripts } = Astro.props;
 <Layout>
   <h1>Scripts tagged "{tag}".</h1>
   <Home />
-  <ul class="scriptlist">
-    {
-      scripts.map((script: any) => (
-        <ScriptCard
-          url={script.url}
-          title={script.frontmatter.title}
-          description={script.frontmatter.description}
-          version={script.frontmatter.version}
-          tags={script.frontmatter.tags}
-        />
-      ))
-    }
-  </ul>
+  <ScriptList scripts={scripts} />
+  
 </Layout>
 
-<style>
-  .scriptlist {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    list-style: none;
-    margin: 1rem 0 0 0;
-    padding: 0;
-  }
-</style>

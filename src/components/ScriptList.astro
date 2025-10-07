@@ -1,0 +1,49 @@
+---
+import ScriptCard from "../components/ScriptCard.astro";
+
+const { scripts } = Astro.props;
+
+
+scripts.sort((a: any, b: any) => {
+    if(a.frontmatter.title < b.frontmatter.title){
+        return -1;
+    } else {
+        return 1;
+    }
+});
+
+---
+<ul class="scriptlist">
+  {
+    scripts.map((script: any) => (
+      <ScriptCard
+        url={script.url}
+        title={script.frontmatter.title}
+        description={script.frontmatter.description}
+        version={script.frontmatter.version}
+        tags={script.frontmatter.tags}
+      />
+    ))
+  }
+</ul>
+
+<style>
+  /*   .scriptlist{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  } */
+
+  .scriptlist {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    max-width: 80ch;
+    margin: 0 15px;
+    padding: 0;
+    gap: 1rem;
+  }
+</style>

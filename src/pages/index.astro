@@ -1,12 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ScriptCard from "../components/ScriptCard.astro";
-
+import ScriptList from "../components/ScriptList.astro";
 const base = import.meta.env.BASE_URL;
-
 const allScripts = Object.values(
   import.meta.glob("./scripts/*.mdx", { eager: true })
 );
+
 ---
 
 <Layout>
@@ -28,30 +27,19 @@ const allScripts = Object.values(
   <p>
     The scripts on this page are made available as downloadble zip files which
     can be imported into Tampernonkey. If you want to, you can
-    <a href={`${base}/import`}
+    <a href={`${base}import`}
       >learn how to import scripts from zip files here</a
     >.
   </p>
 
   <h2>Scripts</h2>
   <p>
-    Click the boxes below to read more about a script and
-    download it.
+    Click the title of a script below to read more about a script and
+    download it. Click on a tag to view scripts in the same category.
   </p>
 
-  <ul class="scriptlist">
-    {
-      allScripts.map((script: any) => (
-        <ScriptCard
-          url={script.url}
-          title={script.frontmatter.title}
-          description={script.frontmatter.description}
-          version={script.frontmatter.version}
-          tags={script.frontmatter.tags}
-        />
-      ))
-    }
-  </ul>
+  <ScriptList scripts={allScripts}/>
+ 
 </Layout>
 
 <style>
@@ -60,12 +48,5 @@ const allScripts = Object.values(
     text-align: center;
   }
 
-  .scriptlist{
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+
 </style>

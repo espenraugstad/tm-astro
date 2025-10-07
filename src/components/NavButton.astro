@@ -1,0 +1,29 @@
+---
+const { text, url, title } = Astro.props;
+---
+
+<a href={url}>{text}<span class="sr-only"> {title}</span></a>
+
+<style>
+  a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: white;
+    color: #283d3b;
+    font-weight: normal;
+    /*width: calc(100% - 1rem);*/
+    width: fit-content;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 0.5rem 1rem;
+    border: 1px solid #283d3b;
+    border-radius: 5px;
+  }
+  a:hover{
+    background-color: #283d3b;
+    color: white;
+  }
+</style>

@@ -16,14 +16,14 @@ const base = import.meta.env.BASE_URL;
     <main>
       <slot />
     </main>
-    <Footer></Footer>
+    <Footer />
   </body>
 </html>
 
 <style>
   * {
     box-sizing: border-box;
-	font-family: "Acumin Pro", sans-serif;
+    font-family: "Acumin Pro", sans-serif;
   }
   html {
     margin: 0;
@@ -48,9 +48,16 @@ const base = import.meta.env.BASE_URL;
     max-width: 80ch;
     margin-inline: auto;
   }
-  :global(p){
-	line-height: 1.5rem;
+  :global(p) {
+    line-height: 1.5rem;
   }
-  
 
+  :global(.sr-only) {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
 </style>
